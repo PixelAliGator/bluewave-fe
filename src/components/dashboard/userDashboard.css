@@ -1,0 +1,42 @@
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../assets/background_image.jpg'); /* Use your actual path */
+    background-size: cover;
+}
+
+.user-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.user-info h1 {
+    color: #0044cc;
+}
+
+.user-info form, .user-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003399;
+}
