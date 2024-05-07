@@ -1,0 +1,29 @@
+.careers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background-image: url("../../assets/background_image.jpg");
+  background-size: cover;
+  color: #000000;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.careers-container h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.job-listing {
+  width: 80%; /* Adjust width according to your design */
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
