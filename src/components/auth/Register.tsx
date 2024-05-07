@@ -24,7 +24,7 @@ const Registration: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setProfileData({ ...profileData, [event.target]: event.target.value });
+    setProfileData({ ...profileData, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
