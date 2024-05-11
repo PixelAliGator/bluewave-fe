@@ -2,8 +2,8 @@ import './login.css'
 import  { ChangeEvent, FormEvent, useState } from 'react';
 import axios from 'axios';
 import { getPayload, setToken } from '../lib/auth';
-import { updateUser } from '../../observables/authObservable';
-import { RenderState, updateRenderState } from '../../observables/appObservables';
+import { updateUser } from '../observables/authObservable';
+import { RenderState, updateRenderState } from '../observables/appObservables';
 
 type ProfileData = {
   email: string;

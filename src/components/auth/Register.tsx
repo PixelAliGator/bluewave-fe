@@ -4,7 +4,7 @@ import axios from "axios";
 import {
   RenderState,
   updateRenderState,
-} from "../../observables/appObservables";
+} from "../observables/appObservables";
 
 type ProfileData = {
   email: string;
@@ -45,7 +45,7 @@ const Registration: React.FC = () => {
 
     try {
       // Here you would send the data to the server
-      const res = await axios.post(
+       await axios.post(
         "http://127.0.0.1:8080/api/register",
         profileData
       ); // Clear form
@@ -60,22 +60,22 @@ const Registration: React.FC = () => {
       setErrorMessage(""); // Redirect or inform the user of successful registration
 
       updateRenderState(RenderState.LOGIN);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log(error.response.data);
     }
   };
 
   return (
     <div className="container">
-            <h2>Registration</h2>
-            
+      <h2>Registration</h2>
+      
       <form onSubmit={handleSubmit}>
-                
+        
         <div className="field">
-                    <label className="label">Email</label>
-                    
+          <label className="label">Email</label>
+          
           <div className="control">
-                        
+            
             <input
               type="email"
               name="email"
@@ -84,16 +84,16 @@ const Registration: React.FC = () => {
               className="input"
               placeholder="Email"
             />
-                      
+            
           </div>
-                  
+          
         </div>
-                
+        
         <div className="field">
-                    <label className="label">Username</label>
-                    
+          <label className="label">Username</label>
+          
           <div className="control">
-                        
+            
             <input
               type="text"
               name="username"
@@ -102,16 +102,16 @@ const Registration: React.FC = () => {
               className="input"
               placeholder="Username"
             />
-                      
+            
           </div>
-                  
+          
         </div>
-                
+        
         <div className="field">
-                    <label className="label">Password</label>
-                    
+          <label className="label">Password</label>
+          
           <div className="control">
-                        
+            
             <input
               type="password"
               name="password"
@@ -120,16 +120,16 @@ const Registration: React.FC = () => {
               className="input"
               placeholder="Password"
             />
-                      
+            
           </div>
-                  
+          
         </div>
-                
+        
         <div className="field">
-                    <label className="label">Confirm Password</label>
-                    
+          <label className="label">Confirm Password</label>
+          
           <div className="control">
-                        
+            
             <input
               type="password"
               name="passwordConfirmation"
@@ -138,25 +138,25 @@ const Registration: React.FC = () => {
               className="input"
               placeholder="Confirm Password"
             />
-                      
+            
           </div>
-                  
+          
         </div>
-                
+        
         {errorMessage && (
           <div className="notification is-danger">{errorMessage}</div>
         )}
-                
+        
         <div className="control">
-                    
+          
           <button type="submit" className="button is-primary">
             Register
           </button>
-                  
+          
         </div>
-              
+        
       </form>
-          
+      
     </div>
   );
 };
