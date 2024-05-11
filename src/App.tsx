@@ -4,24 +4,24 @@ import './App.css'
 import SecureRoute from './components/common/secureRoute';
 import Home from './components/ui/Home.tsx';
 import Login from './components/auth/Login';
-import Navbar from './components/ui/Nav.tsx'
+// import Navbar from './components/ui/Nav.tsx'
 import Registration from './components/auth/Register';
-import UserDashboard from './components/dashboard/UserDashboard';
+// import UserDashboard from './components/dashboard/UserDashboard';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { RenderState, renderState$, updateRenderState } from './components/observables/appObservables.ts';
 import { isAuthenticated } from './components/lib/auth.ts';
-import ProfileSetup from './components/common/ProfileSetup.tsx';
-import { UserInterface, currentUser$ } from './observables/authObservable.ts';
-import AddActivity from './components/dashboard/AddActivity.tsx';
+// import ProfileSetup from './components/common/ProfileSetup.tsx';
+import { UserInterface, currentUser$ } from './components/observables/authObservable.ts';
+// import AddActivity from './components/dashboard/AddActivity.tsx';
 import AddGoal from './components/dashboard/addGoal.tsx';
-import Dashboard from './components/dashboard/Dashboard.tsx';
-import Shop from './components/common/Shop.tsx';
-import Success from './components/common/Success.tsx';
-import Cancel from './components/common/Cancel.tsx';
+// import Dashboard from './components/dashboard/Dashboard.tsx';
+// import Shop from './components/common/Shop.tsx';
+// import Success from './components/common/Success.tsx';
+// import Cancel from './components/common/Cancel.tsx';
 import Explore from './components/common/Explore.tsx';
-import ContactPage from './components/common/ContactUs.tsx';
-import TermsOfService from './components/common/TOS.tsx';
-import Careers from './components/common/Careers.tsx';
+// import ContactPage from './components/common/ContactUs.tsx';
+// import TermsOfService from './components/common/TOS.tsx';
+// import Careers from './components/common/Careers.tsx';
 
 function App() {
   // Assuming you have a function to get user profile data
@@ -73,48 +73,49 @@ function App() {
     case RenderState.HOME:
       Child = <Home isAuth={isAuth} />;
       break;
-    case RenderState.LOGIN:
-      Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Login />;
-      break;
+    // case RenderState.LOGIN:
+    //   Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Login />;
+    //   break;
     case RenderState.REGISTER:
-      Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Registration />;
+      // Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Registration />;
+        Child = <Registration />
       break;
-    case RenderState.USER_DASHBOARD:
-      Child = <SecureRoute><UserDashboard /></SecureRoute>;
-      break;
-    case RenderState.PROFILE_SETUP:
-      Child = <SecureRoute><ProfileSetup /></SecureRoute>;
-      break;
-    case RenderState.ACTIVITIES:
-      Child = <SecureRoute><AddActivity></AddActivity></SecureRoute>
-      break;
+    // case RenderState.USER_DASHBOARD:
+    //   Child = <SecureRoute><UserDashboard /></SecureRoute>;
+    //   break;
+    // case RenderState.PROFILE_SETUP:
+    //   Child = <SecureRoute><ProfileSetup /></SecureRoute>;
+    //   break;
+    // case RenderState.ACTIVITIES:
+      // Child = <SecureRoute><AddActivity></AddActivity></SecureRoute>
+      // break;
     case RenderState.GOALS:
       Child = <SecureRoute><AddGoal></AddGoal></SecureRoute>
       break;
-    case RenderState.DASHBOARD:
-      Child = <SecureRoute><Dashboard></Dashboard></SecureRoute>
-      break;
-    case RenderState.CONTACT:
-      Child = <ContactPage></ContactPage>
-      break;
-    case RenderState.SHOP:
-      Child = <Shop></Shop>
-      break;
-    case RenderState.SUCCESS:
-      Child = <Success></Success>
-      break;
+    // case RenderState.DASHBOARD:
+    //   Child = <SecureRoute><Dashboard></Dashboard></SecureRoute>
+    //   break;
+    // case RenderState.CONTACT:
+    //   Child = <ContactPage></ContactPage>
+    //   break;
+    // case RenderState.SHOP:
+    //   Child = <Shop></Shop>
+    //   break;
+    // case RenderState.SUCCESS:
+    //   Child = <Success></Success>
+    //   break;
     case RenderState.EXPLORE:
       Child = <Explore></Explore>
       break;
-    case RenderState.CANCEL:
-      Child = <Cancel></Cancel>
-      break;
-    case RenderState.TOS:
-      Child = <TermsOfService></TermsOfService>
-      break;
-    case RenderState.CAREERS:
-      Child = <Careers></Careers>
-      break;
+    // case RenderState.CANCEL:
+    //   Child = <Cancel></Cancel>
+    //   break;
+    // case RenderState.TOS:
+    //   Child = <TermsOfService></TermsOfService>
+    //   break;
+    // case RenderState.CAREERS:
+    //   Child = <Careers></Careers>
+    //   break;
     default:
       Child = <Login />;
       break;
@@ -123,7 +124,7 @@ function App() {
   return (
     <div className='root-layout'>
       <header>
-        <Navbar isAuth={isAuth} />
+        {/* <Navbar isAuth={isAuth} /> */}
       </header>
       <main>
         {Child}

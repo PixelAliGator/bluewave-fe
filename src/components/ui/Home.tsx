@@ -1,5 +1,5 @@
 import { RenderState, updateRenderState } from "../observables/appObservables";
-import "./ui/home.css";
+import "./home.css";
 
 interface HomeInterface {
     isAuth: boolean;
