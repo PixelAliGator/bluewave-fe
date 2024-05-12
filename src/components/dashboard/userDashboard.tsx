@@ -53,8 +53,8 @@ const UserDashboard: React.FC = () => {
         }
 
         try {
-            const response = await axios.put(http://127.0.0.1:8080/api/user, formData, {
-                headers: { 'Authorization': Bearer ${token} }
+            const response = await axios.put(`http://127.0.0.1:8080/api/user`, formData, {
+                headers: { 'Authorization': `Bearer ${token}` }
             });
             console.log(response.data);
             setIsEditing(false);

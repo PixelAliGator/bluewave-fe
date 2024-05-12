@@ -1,7 +1,7 @@
 import './App.css'
 
 
-import SecureRoute from './components/common/secureRoute';
+import SecureRoute from './components/common/secureRoute.tsx';
 import Home from './components/ui/Home.tsx';
 import Login from './components/auth/Login';
 // import Navbar from './components/ui/Nav.tsx'
