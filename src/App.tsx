@@ -4,7 +4,7 @@ import './App.css'
 import SecureRoute from './components/common/secureRoute.tsx';
 import Home from './components/ui/Home.tsx';
 import Login from './components/auth/Login';
-// import Navbar from './components/ui/Nav.tsx'
+import Navbar from './components/ui/Nav.tsx'
 import Registration from './components/auth/Register';
 // import UserDashboard from './components/dashboard/UserDashboard';
 import { useEffect, useLayoutEffect, useState } from 'react';
@@ -124,7 +124,7 @@ function App() {
   return (
     <div className='root-layout'>
       <header>
-        {/* <Navbar isAuth={isAuth} /> */}
+        <Navbar isAuth={isAuth} />
       </header>
       <main>
         {Child}
