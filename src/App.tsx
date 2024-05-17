@@ -1,16 +1,16 @@
 import './App.css'
 
 
-import SecureRoute from './components/common/secureRoute';
+import SecureRoute from './components/common/secureRoute.tsx';
 import Home from './components/ui/Home.tsx';
 import Login from './components/auth/Login';
-// import Navbar from './components/ui/Nav.tsx'
+import Navbar from './components/ui/Nav.tsx'
 import Registration from './components/auth/Register';
-// import UserDashboard from './components/dashboard/UserDashboard';
+import UserDashboard from './components/dashboard/userDashboard';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { RenderState, renderState$, updateRenderState } from './components/observables/appObservables.ts';
 import { isAuthenticated } from './components/lib/auth.ts';
-// import ProfileSetup from './components/common/ProfileSetup.tsx';
+import ProfileSetup from './components/common/ProfileSetup.tsx';
 import { UserInterface, currentUser$ } from './components/observables/authObservable.ts';
 // import AddActivity from './components/dashboard/AddActivity.tsx';
 import AddGoal from './components/dashboard/addGoal.tsx';
@@ -73,19 +73,18 @@ function App() {
     case RenderState.HOME:
       Child = <Home isAuth={isAuth} />;
       break;
-    // case RenderState.LOGIN:
-    //   Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Login />;
-    //   break;
-    case RenderState.REGISTER:
-      // Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Registration />;
-        Child = <Registration />
+    case RenderState.LOGIN:
+      Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Login />;
       break;
-    // case RenderState.USER_DASHBOARD:
-    //   Child = <SecureRoute><UserDashboard /></SecureRoute>;
-    //   break;
-    // case RenderState.PROFILE_SETUP:
-    //   Child = <SecureRoute><ProfileSetup /></SecureRoute>;
-    //   break;
+    case RenderState.REGISTER:
+      Child = isAuth ? <SecureRoute><UserDashboard /></SecureRoute> : <Registration />;
+      break;
+    case RenderState.USER_DASHBOARD:
+      Child = <SecureRoute><UserDashboard/></SecureRoute>;
+      break;
+    case RenderState.PROFILE_SETUP:
+      Child = <SecureRoute><ProfileSetup /></SecureRoute>;
+      break;
     // case RenderState.ACTIVITIES:
       // Child = <SecureRoute><AddActivity></AddActivity></SecureRoute>
       // break;
@@ -124,7 +123,7 @@ function App() {
   return (
     <div className='root-layout'>
       <header>
-        {/* <Navbar isAuth={isAuth} /> */}
+        <Navbar isAuth={isAuth} />
       </header>
       <main>
         {Child}
